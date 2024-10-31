@@ -1,0 +1,40 @@
+# Ensure consistent line endings (LF) on all platforms
+* text=auto
+
+# Set specific file types to use LF line endings
+*.sh     text eol=lf
+*.yml    text eol=lf
+*.yaml   text eol=lf
+*.md     text eol=lf
+
+# Set specific file types to use CRLF line endings
+*.bat    text eol=crlf
+
+# Binary files should not be diffed by Git
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.pdf    binary
+*.exe    binary
+*.zip    binary
+
+# Custom diffing for language-specific files (e.g., treat .json as text)
+*.json   text
+
+# Special handling for large files or files that change frequently (Git LFS)
+*.psd    filter=lfs diff=lfs merge=lfs -text
+*.mp4    filter=lfs diff=lfs merge=lfs -text
+
+# Handling for common programming languages
+*.c      diff=c
+*.cpp    diff=cpp
+*.py     diff=python
+*.js     diff=javascript
+
+# Custom merge driver for specific file types (useful for languages with special merge tools)
+*.lock   merge=ours
+
+# Optional: Exclude certain files from language statistics
+*.min.js linguist-generated
+*.min.css linguist-generated
