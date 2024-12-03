@@ -1,1 +1,14 @@
-
+{
+  "name": "sample-project",
+  "version": "1.0.0",
+  "description": "A sample project for GitHub Actions CI/CD workflow",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo 'Running tests...' && exit 0",
+    "start": "node index.js"
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}
