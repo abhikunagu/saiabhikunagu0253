@@ -4,35 +4,29 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout Code
+      # Checkout the code
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Set up Node.js (if applicable)
+      # Set up Node.js environment
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
           node-version: '14'
 
-      # Install Dependencies
+      # Install dependencies
       - name: Install dependencies
         run: npm install
+        working-directory: ./frontend # Adjust if package.json is not in root
 
-      # Run Tests
+      # Run tests
       - name: Run tests
         run: npm test
+        working-directory: ./frontend # Adjust if package.json is not in root
 
-      # Example Deployment Step
-      - name: Deploy to Server
-        run: |
-          echo "Deployment step here"
-          # Add your deployment logic
