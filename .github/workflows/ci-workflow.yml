@@ -1,0 +1,38 @@
+name: CI Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout Code
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Set up Node.js (if applicable)
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      # Install Dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Run Tests
+      - name: Run tests
+        run: npm test
+
+      # Example Deployment Step
+      - name: Deploy to Server
+        run: |
+          echo "Deployment step here"
+          # Add your deployment logic
