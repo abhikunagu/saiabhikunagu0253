@@ -10,26 +10,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout the code
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # List repository files
       - name: List repository files
         run: ls -R
 
-      # Set up Node.js environment
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
           node-version: '14'
 
-      # Install dependencies
       - name: Install dependencies
         run: npm install
-        working-directory: ./frontend
+        working-directory: ./frontend # Adjust this path if needed
 
-      # Run tests
       - name: Run tests
         run: npm test
-        working-directory: ./frontend
+        working-directory: ./frontend # Adjust this path if needed
