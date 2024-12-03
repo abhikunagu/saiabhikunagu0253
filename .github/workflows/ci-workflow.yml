@@ -23,8 +23,8 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: ./frontend # Adjust this path if needed
+        working-directory: ./frontend  # Ensure this matches your directory structure
 
       - name: Run tests
         run: npm test
-        working-directory: ./frontend # Adjust this path if needed
+        working-directory: ./frontend
